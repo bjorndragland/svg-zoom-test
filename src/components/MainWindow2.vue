@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <header class="main-head">Test for zooming om punkt</header>
+    <header class="main-head">Test for zooming om punkt og panning</header>
 
     <div class="content">
       <SvgWorkSpace></SvgWorkSpace>

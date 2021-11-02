@@ -5,6 +5,7 @@
     id="svgmain"
     class="noDrag"
     :viewBox="this.viewBoxString"
+    preserveAspectRatio="xMidYMid meet"
     @mousedown="startDrag($event)"
     @mousemove="drag($event)"
     @mouseup="endDrag($event)"
@@ -57,8 +58,6 @@
     <line x1="50" x2="150" y1="120" y2="120" stroke="teal" />
     <line x1="50" x2="150" y1="130" y2="130" stroke="teal" />
     <line x1="50" x2="150" y1="140" y2="140" stroke="teal" />
-
-
 
     <rect
       class="noDrag"
@@ -119,8 +118,10 @@ export default {
   methods: {
     zoomers(e) {
       let theeses = this.getMouseScrollSvgPosition(e);
-      store.zoomInStore(theeses.x, theeses.y, e.deltaY);
-      console.log("musx " + theeses.x + " " + "musy " + theeses.y + " " + e.deltaY);
+      store.zoomInStore2(theeses.x, theeses.y, e.deltaY);
+      // console.log(
+      //   "musx " + theeses.x + " " + "musy " + theeses.y + " " + e.deltaY
+      // );
     },
     mouseCoords(evt) {
       store.state.mouseX = evt.clientX;
@@ -190,10 +191,16 @@ export default {
     },
     getMouseScrollSvgPosition(evt) {
       let themain = document.getElementById("svgmain");
-      var CTM = themain.getScreenCTM();
+      // var CTM = themain.getScreenCTM();
+      var point = themain.createSVGPoint();
+      point.x = evt.clientX;
+      point.y = evt.clientY;
+      var startPoint = point.matrixTransform(themain.getScreenCTM().inverse());
       return {
-        x: (evt.clientX - CTM.e) / CTM.a,
-        y: (evt.clientY - CTM.f) / CTM.d,
+        // x: (evt.clientX - CTM.e) / CTM.a,
+        // y: (evt.clientY - CTM.f) / CTM.d,
+        x: startPoint.x,
+        y: startPoint.y,
       };
     },
   },
