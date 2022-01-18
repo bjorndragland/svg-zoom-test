@@ -11,6 +11,10 @@
 * Visible and, to an extent, editable Viewbox and zoom-variables
 * CSS Grid for layout
 
+### Credits and inspiration
+* Zoom, Pan: https://codepen.io/osublake/pen/oGoyYb
+* Dragging SVG-elements: https://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
+
 ## Project setup
 ```
 npm install
