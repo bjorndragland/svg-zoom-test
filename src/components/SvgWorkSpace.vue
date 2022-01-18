@@ -93,10 +93,13 @@ export default {
   data() {
     return {
       dragging: false,
+      panning: false,
       offsetx: 0,
       offsety: 0,
       selectedId: "",
       zoomFactor: 2,
+      initX: 0,
+      initY: 0,
     };
   },
   computed: {
@@ -118,7 +121,7 @@ export default {
   methods: {
     zoomers(e) {
       let theeses = this.getMouseScrollSvgPosition(e);
-      store.zoomInStore2(theeses.x, theeses.y, e.deltaY);
+      store.zoomInStore(theeses.x, theeses.y, e.deltaY);
       // console.log(
       //   "musx " + theeses.x + " " + "musy " + theeses.y + " " + e.deltaY
       // );
@@ -129,7 +132,7 @@ export default {
     },
 
     newItem(evt) {
-      if (evt.button === 0) {
+      if (evt.button === 0 && this.panning == false) {
         let topsvg = evt.target.parentNode;
         let pt = topsvg.createSVGPoint();
         pt.x = evt.clientX;
@@ -158,6 +161,15 @@ export default {
         this.offsetx = offset.x;
         this.offsety = offset.y;
         this.dragging = true;
+      } else if (
+        evt.target.classList.contains("noDrag") == true &&
+        (evt.button === 1 || (evt.altKey && evt.button === 0))
+      ) {
+        // pan mode
+        this.panning = true;
+        let theeses = this.getMouseScrollSvgPosition(evt);
+        this.initX = theeses.x;
+        this.initY = theeses.y;
       }
     },
 
@@ -170,6 +182,9 @@ export default {
 
         this.objsFromStore[0].cx = coord.x - this.offsetx;
         this.objsFromStore[0].cy = coord.y - this.offsety;
+      } else if (this.panning == true) {
+        let theeses = this.getMouseScrollSvgPosition(evt);
+        store.panInStore(this.initX, this.initY, theeses.x, theeses.y);
       }
     },
 
@@ -178,6 +193,7 @@ export default {
       this.offsetx = null;
       this.offsety = null;
       this.dragging = false;
+      this.panning = false;
       this.selectedId = "";
       // }
     },

@@ -35,8 +35,9 @@
         <input id="zoomPY" type="number" v-model="zoomPY" />
       </div>
       <div class="spaceMe">
-        <button @click="zoomIn">Zoom In</button>
-        <button @click="zoomOut">Zoom Out</button>
+        <!-- <button @click="zoomIn">Zoom In</button> -->
+        <!-- <button @click="zoomOut">Zoom Out</button> -->
+        <button @click="resetZoom">Reset</button>
       </div>
     </aside>
   </div>
@@ -51,39 +52,8 @@ export default {
     SvgWorkSpace,
   },
   methods: {
-    zoomInnie() {
-      store.zoomInStore();
-    },
-    zoomIn() {
-      let zoomAA = store.state.origDX / store.state.viewBox_dx;
-
-      // ny bredde
-      store.state.viewBox_dx = store.state.viewBox_dx / store.state.zoomNum;
-
-      // ny høyde
-      store.state.viewBox_dy = store.state.viewBox_dy / store.state.zoomNum;
-
-      // ny x-pos
-      let thePX =
-        store.state.zoomPX -
-        (1 / (store.state.zoomNum * zoomAA)) * store.state.zoomPX;
-      store.state.viewBox_x = thePX;
-
-      // ny y-pos
-      let thePY =
-        store.state.zoomPY -
-        (1 / (store.state.zoomNum * zoomAA)) * store.state.zoomPY;
-      store.state.viewBox_y = thePY;
-    },
-
-    zoomOut() {
-      // bredde
-      store.state.viewBox_dx = store.state.viewBox_dx * store.state.zoomNum;
-      // høyde
-      store.state.viewBox_dy = store.state.viewBox_dy * store.state.zoomNum;
-      // x
-
-      // y
+    resetZoom() {
+      store.resetView();
     },
   },
   computed: {
