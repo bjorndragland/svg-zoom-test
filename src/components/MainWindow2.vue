@@ -35,7 +35,10 @@
         <input id="zoomPY" type="number" v-model="zoomPY" />
       </div>
       <div class="spaceMe">
-        <button @click="resetZoom">Reset</button>
+        <button @click="resetZoom">Reset View</button>
+      </div>
+      <div class="spaceMe">
+        <button @click="resetPoint">Delete the Point</button>
       </div>
     </aside>
   </div>
@@ -53,6 +56,9 @@ export default {
     resetZoom() {
       store.resetView();
     },
+    resetPoint(){
+      store.resetPoint();
+    }
   },
   computed: {
     origDX() {

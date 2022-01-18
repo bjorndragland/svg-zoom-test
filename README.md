@@ -15,6 +15,9 @@
 * Zoom, Pan: https://codepen.io/osublake/pen/oGoyYb
 * Dragging SVG-elements: https://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
 
+### Link
+https://kraftanlegget.no/svg-zoom-test/dist/#/
+
 ## Project setup
 ```
 npm install

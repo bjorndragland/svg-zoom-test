@@ -25,6 +25,9 @@ export const store = Vue.observable({
     store.state.viewBox_dx = store.state.origDX
     store.state.viewBox_dy = store.state.origDY
   },
+  resetPoint() {
+    store.state.collOfPoints = [];
+  },
 
   zoomInStore(x, y, dx) {
     let thePX, thePY

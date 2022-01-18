@@ -120,7 +120,6 @@ export default {
     zoomers(e) {
       let theeses = this.getMouseScrollSvgPosition(e);
       store.zoomInStore(theeses.x, theeses.y, e.deltaY);
-
     },
     mouseCoords(evt) {
       store.state.mouseX = evt.clientX;
@@ -128,7 +127,11 @@ export default {
     },
 
     newItem(evt) {
-      if (evt.button === 0 && this.panning == false) {
+      if (
+        evt.button === 0 &&
+        this.panning == false &&
+        store.state.collOfPoints.length == 0
+      ) {
         let topsvg = evt.target.parentNode;
         let pt = topsvg.createSVGPoint();
         pt.x = evt.clientX;
@@ -150,7 +153,6 @@ export default {
       if (evt.target.classList.contains("noDrag") == false) {
         this.selectedId = evt.target.getAttributeNS(null, "id");
         selectedElement = evt.target;
-        console.log(this.selectedId);
         offset = this.getMousePosition(evt, selectedElement);
         offset.x -= parseFloat(selectedElement.getAttributeNS(null, "cx"));
         offset.y -= parseFloat(selectedElement.getAttributeNS(null, "cy"));
