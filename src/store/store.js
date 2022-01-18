@@ -20,7 +20,6 @@ export const store = Vue.observable({
   },
 
   resetView() {
-    console.log("is this thing on")
     store.state.viewBox_x = 0
     store.state.viewBox_y = 0
     store.state.viewBox_dx = store.state.origDX
@@ -28,7 +27,6 @@ export const store = Vue.observable({
   },
 
   zoomInStore(x, y, dx) {
-
     let thePX, thePY
     if (dx > 0) {
       store.state.scaleNum = Number(store.state.zoomNum)

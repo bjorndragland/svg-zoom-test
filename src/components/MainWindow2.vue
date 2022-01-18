@@ -35,8 +35,6 @@
         <input id="zoomPY" type="number" v-model="zoomPY" />
       </div>
       <div class="spaceMe">
-        <!-- <button @click="zoomIn">Zoom In</button> -->
-        <!-- <button @click="zoomOut">Zoom Out</button> -->
         <button @click="resetZoom">Reset</button>
       </div>
     </aside>

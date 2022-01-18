@@ -1,11 +1,15 @@
 # svg-zoom-test
 
-A test-project mainly for zooming and panning on a SVG
-Features:
+### A test-project mainly for zooming and panning on a SVG
+
+
+* Zoom; mouse-wheel-scroll to and from the cursor location
+* Pan; hold down middle mouse-button and drag the SVG around
 * Left-click to add a point to the SVG 
 * Drag the point by grabbing it and moving it around
-* Zoom; mouse-wheel-scroll to and from the cursor location
-* Pan; hold down middle mouse-button and drag the SVG around 
+* Simplified store pattern (not vuex) with direct mutations for quick development...
+* Visible and, to an extent, editable Viewbox and zoom-variables
+* CSS Grid for layout
 
 ## Project setup
 ```
