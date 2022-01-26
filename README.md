@@ -16,7 +16,7 @@
 * Zoom, Pan: https://codepen.io/osublake/pen/oGoyYb
 * Dragging SVG-elements: https://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
 
-![screenshot](https://raw.githubusercontent.com/bjorndragland/svg-zoom-test/master/src/assets/svg_zoom_test.png)
+![screenshot](/src/assets/svg_zoom_test.png)
 
 ### Link
 https://kraftanlegget.no/svg-zoom-test/dist/#/
