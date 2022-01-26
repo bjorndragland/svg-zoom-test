@@ -1,6 +1,8 @@
 <template>
   <div class="wrapper">
-    <header class="main-head">Test for zooming om punkt og panning</header>
+    <header class="main-head">
+      <h1>Test for zooming om punkt og panning</h1>
+    </header>
 
     <div class="content">
       <SvgWorkSpace></SvgWorkSpace>
@@ -56,9 +58,9 @@ export default {
     resetZoom() {
       store.resetView();
     },
-    resetPoint(){
+    resetPoint() {
       store.resetPoint();
-    }
+    },
   },
   computed: {
     origDX() {
@@ -135,26 +137,32 @@ export default {
 </script>
 
 <style scoped>
+
+h1{
+font-size: 1.2em
+}
+
 .main-head {
   grid-area: header;
-  background-color: rgb(158, 255, 171);
+  background-color: rgb(234, 244, 248);
+  min-height: 50px;
 }
 .content {
   grid-area: content;
-  background-color: rgb(213, 235, 215);
+  background-color: rgb(224, 226, 226);
   max-height: 600px;
   overflow: hidden;
 }
 
 .side {
   grid-area: sidebar;
-  background-color: rgb(181, 226, 247);
+  background-color: rgb(234, 244, 248);
   display: block;
 }
 
 .wrapper {
   display: grid;
-  gap: 20px;
+  gap: 10px;
   grid-template-areas:
     "header"
     "content"
@@ -173,6 +181,6 @@ export default {
   }
 }
 .spaceMe {
-  margin: 10px;
+  margin: 12px;
 }
 </style>

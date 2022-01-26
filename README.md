@@ -4,7 +4,8 @@
 
 
 * Zoom; mouse-wheel-scroll to and from the cursor location
-* Pan; hold down middle mouse-button and drag the SVG around
+* Pan with mouse; hold down middle mouse-button and drag the SVG around
+* Pan with laptop touchpad; hold down the ALT-key and left-button and drag the SVG around
 * Left-click to add a point to the SVG 
 * Drag the point by grabbing it and moving it around
 * Simplified store pattern (not vuex) with direct mutations for quick development...
@@ -14,6 +15,8 @@
 ### Credits and inspiration
 * Zoom, Pan: https://codepen.io/osublake/pen/oGoyYb
 * Dragging SVG-elements: https://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
+
+![screenshot](https://raw.githubusercontent.com/bjorndragland/svg-zoom-test/master/src/assets/svg_zoom_test.png)
 
 ### Link
 https://kraftanlegget.no/svg-zoom-test/dist/#/
