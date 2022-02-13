@@ -1,6 +1,6 @@
 # svg-zoom-test
 
-### A test-project mainly for zooming and panning on a SVG
+### A vue.js (2) test-project for zooming and panning a SVG workspace
 
 
 * Zoom; mouse-wheel-scroll to and from the cursor location
