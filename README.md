@@ -2,7 +2,7 @@
 
 ### A vue.js (2) test-project for zooming and panning a SVG workspace
 
-
+* Currently only for mouse/trackpad - no touchscreen support as of yet
 * Zoom; mouse-wheel-scroll to and from the cursor location
 * Pan with mouse; hold down middle mouse-button and drag the SVG around
 * Pan with laptop touchpad; hold down the ALT-key and left-button and drag the SVG around
