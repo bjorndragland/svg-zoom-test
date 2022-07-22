@@ -85,7 +85,7 @@ import { store } from "../store/store.js";
 
 export default {
   created() {
-    document.addEventListener("wheel", this.zoomers);
+    document.addEventListener("wheel", this.zooming);
   },
 
   data() {
@@ -117,9 +117,9 @@ export default {
     },
   },
   methods: {
-    zoomers(e) {
-      let theeses = this.getMouseScrollSvgPosition(e);
-      store.zoomInStore(theeses.x, theeses.y, e.deltaY);
+    zooming(e) {
+      let curMousePos = this.getMouseScrollSvgPosition(e);
+      store.zoomInStore(curMousePos.x, curMousePos.y, e.deltaY);
     },
     mouseCoords(evt) {
       store.state.mouseX = evt.clientX;
@@ -165,9 +165,9 @@ export default {
       ) {
         // pan mode
         this.panning = true;
-        let theeses = this.getMouseScrollSvgPosition(evt);
-        this.initX = theeses.x;
-        this.initY = theeses.y;
+        let curMousePos = this.getMouseScrollSvgPosition(evt);
+        this.initX = curMousePos.x;
+        this.initY = curMousePos.y;
       }
     },
 
@@ -180,8 +180,8 @@ export default {
         this.objsFromStore[0].cx = coord.x - this.offsetx;
         this.objsFromStore[0].cy = coord.y - this.offsety;
       } else if (this.panning == true) {
-        let theeses = this.getMouseScrollSvgPosition(evt);
-        store.panInStore(this.initX, this.initY, theeses.x, theeses.y);
+        let curMousePos = this.getMouseScrollSvgPosition(evt);
+        store.panInStore(this.initX, this.initY, curMousePos.x, curMousePos.y);
       }
     },
 
