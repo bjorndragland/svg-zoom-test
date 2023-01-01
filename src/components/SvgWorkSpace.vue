@@ -15,7 +15,7 @@
       y="0"
       width="500"
       height="300"
-      fill="#CFCFC8"
+      fill="#DDE8F0"
       stroke="black"
     />
     <rect
@@ -25,7 +25,7 @@
       y="0"
       width="500"
       height="300"
-      fill="#E0DFD1"
+      fill="#ADC3D8"
       pointer-events="visible"
     />
 

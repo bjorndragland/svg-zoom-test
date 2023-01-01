@@ -144,19 +144,19 @@ font-size: 1.2em
 
 .main-head {
   grid-area: header;
-  background-color: rgb(234, 244, 248);
+  background-color: #eaf4f8;
   min-height: 50px;
 }
 .content {
   grid-area: content;
-  background-color: rgb(224, 226, 226);
+  background-color: #eaebeb;
   max-height: 600px;
   overflow: hidden;
 }
 
 .side {
   grid-area: sidebar;
-  background-color: rgb(234, 244, 248);
+  background-color: #eaf4f8;
   display: block;
 }
 
